@@ -1,0 +1,194 @@
+{%load static%}
+{% load google_analytics_tags %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Perfil</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1>Perfil</h1>
+			<h2>Bienvenido {{name}}, tu plan es de {{calories}} calorias.</h2>
+			<p>Revisa tu menú semanal y/o modifícalo a tu gusto</p>
+		</header>
+
+		<nav id="nav">
+			<ul>
+				<li><a href={% url 'index' %} class="active">Inicio</a></li>
+				<li><a href={% url 'logout' %}>Cerrar Sesión</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div style="display:none">
+				<img src="{% google_analytics %}" width="0" height="0" />
+			</div>
+
+			
+
+			{% if not week_menu %}
+
+			<h1 style="padding-left: 1em;">Selecciona un Restaurante pera ver y elegir su menú</h1>
+			<form action="/profile" method="post" style="margin: 4em 12em;">
+				{% csrf_token %}
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputNamel4">Restaurante</label>
+						<select name="restaurant" class="form-control" id="inputEmail4" placeholder="Restaurante">
+							{%for restaurant in restaurants%}
+							<option value="{{restaurant.name}}">{{restaurant.name}}</option>
+							{%endfor%}
+						</select>
+					</div>
+				</div>
+
+				<button class="button primary" style="margin-top: 1em;" type="submit">Obtener Menú</button></li>
+			</form>
+
+			{%if form_week_menu %}
+
+			<section id="content" class="main">
+				<span class="image main"><img src="images/menu.jpg" alt="" /></span>
+				<h1>Menú de {{restaurant_name}}:</h1>
+				<h3>Lunes</h3>
+				<blockquote>{{monday}} <br> Calorias: {{monday_calories}}</blockquote>
+				
+				<br>
+
+				<h3>Martes</h3>
+				<blockquote>{{tuesday}} <br> Calorias: {{tuesday_calories}}</blockquote>
+				
+				<br>
+				<h3>Miércoles</h3>
+				<blockquote>{{wednesday}} <br> Calorias: {{wednesday_calories}}</blockquote>
+			
+				<br>
+				<h3>Jueves</h3>
+				<blockquote>{{thursday}} <br> Calorias: {{thursday_calories}}</blockquote>
+			
+				<br>
+				<h3>Viernes</h3>
+				<blockquote>{{friday}} <br> Calorias: {{friday_calories}}</blockquote>
+				
+				<br>
+				<h3>Sábado</h3>
+				<blockquote>{{saturday}} <br> Calorias: {{saturday_calories}}</blockquote>
+				
+				<br>
+			</section>
+
+			<a class="button" style="margin: 4.5em" href={% url 'assignMenu' %}>Guardar como mi menú</a>
+
+			{% else %}
+
+			<h2 style="padding:4em;">Lo sentimos, ese restaurante no cuenta con un menú adecuado para ti, porfavor elige otro</h2>
+			{%endif%}
+
+
+
+		</div>
+
+
+
+
+			{% else %}
+
+
+
+			<!-- Content -->
+			<section id="content" class="main">
+				<span class="image main"><img src="images/menu.jpg" alt="" /></span>
+				<h1>Tu menú de la semana:</h1>
+				<h3>Lunes</h3>
+				<blockquote>{{monday}} <br> Calorias: {{monday_calories}}</blockquote>
+				<a href="https://wa.link/5zozw6" class="button small"
+					style="display: block; margin-left: auto; margin-right: auto; width: 30%;">Cambiar</a>
+				<br>
+
+				<h3>Martes</h3>
+				<blockquote>{{tuesday}} <br> Calorias: {{tuesday_calories}}</blockquote>
+				<a href="https://wa.link/5zozw6" class="button small"
+					style="display: block; margin-left: auto; margin-right: auto; width: 30%;">Cambiar</a>
+				<br>
+				<h3>Miércoles</h3>
+				<blockquote>{{wednesday}} <br> Calorias: {{wednesday_calories}}</blockquote>
+				<a href="https://wa.link/5zozw6" class="button small"
+					style="display: block; margin-left: auto; margin-right: auto; width: 30%;">Cambiar</a>
+				<br>
+				<h3>Jueves</h3>
+				<blockquote>{{thursday}} <br> Calorias: {{thursday_calories}}</blockquote>
+				<a href="https://wa.link/5zozw6" class="button small"
+					style="display: block; margin-left: auto; margin-right: auto; width: 30%;">Cambiar</a>
+				<br>
+				<h3>Viernes</h3>
+				<blockquote>{{friday}} <br> Calorias: {{friday_calories}}</blockquote>
+				<a href="https://wa.link/5zozw6" class="button small"
+					style="display: block; margin-left: auto; margin-right: auto; width: 30%;">Cambiar</a>
+				<br>
+				<h3>Sábado</h3>
+				<blockquote>{{saturday}} <br> Calorias: {{saturday_calories}}</blockquote>
+				<a href="https://wa.link/5zozw6" class="button small"
+					style="display: block; margin-left: auto; margin-right: auto; width: 30%;">Cambiar</a>
+				<br>
+			</section>
+
+		</div>
+
+		{% endif %}
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>Pear to Pear</h2>
+				<p>Empresa dedicada a la entrega de alimentos saludables. Creada en 2020</p>
+				<ul class="actions">
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Contacto</h2>
+				<dl class="alt">
+					<dt>Dirección</dt>
+					<dd>s/n, Urb. Campiña Paisajista, Quinta Vivanco, Arequipa 04001</dd>
+					<dt>Teléfono</dt>
+					<dd>+51 987 654 321</dd>
+					<dt>Email</dt>
+					<dd><a href="#">info@peartopear.com</a></dd>
+				</dl>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+				</ul>
+			</section>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'assets/js/browser.min.js' %}"></script>
+	<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'assets/js/util.js' %}"></script>
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

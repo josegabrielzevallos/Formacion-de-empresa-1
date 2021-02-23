@@ -1,0 +1,166 @@
+{%load static%}
+{% load google_analytics_tags %}
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Pear to Pear</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div style="display:none">
+			<img src="{% google_analytics %}" width="0" height="0" />
+		</div>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="{% static 'images/peramorada.svg' %}" width="200" height="200" alt="" /></span>
+						<h1>Pear to Pear</h1>
+						<h2>Resturante</h2>
+						<p>Colaborador de una alimentacion rica y saludable</p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro"class="active">Inicio</a></li>
+							<li><a href="addmenu">Gestiona tus menús</a></li>
+							
+							<li><a href="#second">Reseñas</a></li>
+							<li><a href="pedidos">Pedidos</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Mision de la empresa</h2>
+										</header>
+										<p>Ofrecer alimentos saludables y de calidad que satisfagan a los consumidores.Incentivar el hábito de consumo de pescado.Generar valor a todas las partes interesadas.Mantener un clima de trabajo que permita llegar a las metas y estimule el desarrollo de las personas.</p>
+										
+									</div>
+									<span class="image"><img src="{% static 'images/bv.jpg' %}"  width="350" height="250" alt="" /></span>
+								</div>
+							</section>
+
+						
+						<!-- Second Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>Reseñas</h2>
+									<p>Nuestros clientes respaldan la calidad de nuestro servicio.</p>
+								</header>
+								<ul class="statistics">
+									<li class="style1">
+										<span class="icon solid fa-user"></span>
+										<strong>200</strong> Clientes
+									</li>
+									<li class="style2">
+										<span class="icon solid fa-store"></span>
+										<strong>13</strong> Restaurantes
+									</li>
+									<li class="style3">
+										<span class="icon solid fa-paper-plane"></span>
+										<strong>540</strong> Entregas realizadas
+									</li>
+									<li class="style4">
+										<span class="icon solid fa-home"></span>
+										<strong>2</strong> Ciudades
+									</li>
+									<li class="style5">
+										<span class="icon solid fa-utensils"></span>
+										<strong>100</strong> Platos
+									</li>
+								</ul>
+								<div class="row">
+											<div class="col-6 col-12-medium">
+												Comida rica y saludable. Logré bajar 5 kilos sólo con dieta.<br>
+
+											<strong>Rubén Cuba</strong>
+											</div>
+											<div class="col-6 col-12-medium">
+												Entrega puntual y cumpliendo los protocolos de salud.<br>
+
+												<strong>Aníbal Valenzuela</strong>
+											</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-6 col-12-medium">
+												Alimentos variados y permiten cambiar el menú si algo no te gusta.<br>
+
+											<strong>Mauro Diaz</strong>
+											</div>
+									<div class="col-6 col-12-medium">
+												Buenos consejos para mantener una vida saludable.<br>
+
+											<strong>Brandon Valencia</strong>
+											</div>
+								</div>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Pear to Pear</h2>
+							<p>Empresa dedicada a la entrega de alimentos saludables. Creada en 2020</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Aprende más</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Contacto</h2>
+							<dl class="alt">
+								<dt>Dirección</dt>
+								<dd>s/n, Urb. Campiña Paisajista, Quinta Vivanco, Arequipa 04001</dd>
+								<dt>Teléfono</dt>
+								<dd>+51 987 654 321</dd>
+								<dt>Email</dt>
+								<dd><a href="#">info@peartopear.com</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+

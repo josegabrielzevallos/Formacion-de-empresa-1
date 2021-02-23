@@ -1,0 +1,7 @@
+MakeChange(X, x[1..n this is the coins])
+       for (int i = 1; i < n; i++)
+       {
+           if ( (X - x[i] ==0) || MakeChange(X - x[i]) )
+               return true;
+       }
+       return false;
